@@ -1,31 +1,44 @@
-#include "Workout.h"
-#include "Legs.h"
 #include "Push.h"
 #include "Pull.h"
-#include <vector>
+#include "Inferior.h"
+#include "Workout.h"
+#include <iostream>
+using namespace std;
 
+// Builds a Workout object based on the user option
+Workout buildWorkout(int option) {
+    Workout workout;
+
+    if (option == 1) {
+        workout.setType("Push");
+        workout.addExercise(new Push()); // Push-type exercises
+    } else if (option == 2) {
+        workout.setType("Pull");
+        workout.addExercise(new Pull()); // Pull-type exercises
+    } else if (option == 3) {
+        workout.setType("Inferior");
+        workout.addExercise(new Inferior()); // Inferior-type exercises
+    }
+
+    return workout;
+}
+
+// This function simulates selection and returns the workout information
+string simulateWorkoutSelection(int option) {
+    Workout workout = buildWorkout(option);
+    return workout.getWorkoutInfo(); // Return the generated workout info
+}
+
+// Main function with output to the terminal using cout
 int main() {
-    // Crear ejercicios individuales
-    Exercises* legExercise = new Legs("Squats", "Standing Calf Raises");
-    legExercise->setRepetitions(12);
-    legExercise->setSets(4);
-    legExercise->setWeight(100);
+    // Simulate selection of a workout type
+    int selectedWorkout = 1; // Example: 1 for Push, can be changed to 2 or 3
 
-    Exercises* pushExercise = new Push("Bench Press", "Tricep Dips");
-    pushExercise->setRepetitions(10);
-    pushExercise->setSets(3);
-    pushExercise->setWeight(80);
+    // Get the workout information based on the selection
+    string workoutInfo = simulateWorkoutSelection(selectedWorkout);
 
-    Exercises* pullExercise = new Pull("Deadlift", "Barbell Curls");
-    pullExercise->setRepetitions(8);
-    pullExercise->setSets(5);
-    pullExercise->setWeight(120);
-
-    // Crear un vector de ejercicios
-    std::vector<Exercises*> exercises = { legExercise, pushExercise, pullExercise };
-
-    // Crear un entrenamiento
-    Workout workout("Full Body", exercises);
+    // Output
+    cout << workoutInfo << endl;
 
     return 0;
 }
