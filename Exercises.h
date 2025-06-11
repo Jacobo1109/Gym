@@ -1,26 +1,42 @@
-#ifndef EXERCISES_H
-#define EXERCISES_H
+#ifndef EXERCISE_H
+#define EXERCISE_H
 
-class Exercises {
+#include <string>
+using namespace std;
+
+// Abstract class representing a generic exercise
+class Exercise {
 protected:
+    // Protected attributes to allow inheritance
     int repetitions;
     int sets;
     int weight;
 
 public:
-    Exercises();
-    Exercises(int, int, int);
+    // Constructor
+    Exercise();
 
-    int getRepetitions() const;
-    void setRepetitions(int);
+    // Overloaded constructor with parameters
+    Exercise(int reps, int sets, int weight);
 
-    int getSets() const;
-    void setSets(int);
+    // Getters
+    int getRepetitions();
+    int getSets();
+    int getWeight();
 
-    int getWeight() const;
-    void setWeight(int);
+    // Setters
+    void setRepetitions(int reps);
+    void setSets(int sets);
+    void setWeight(int weight);
 
-    virtual ~Exercises() = default;
+    //  Virtual method
+    virtual string getInfo() = 0;
+
+    // Overloaded method (demonstrates method overloading)
+    virtual string getInfo(bool detailed);
+
+    // Virtual destructor to allow proper cleanup of derived classes
+    virtual ~Exercise() {}
 };
 
 #endif
