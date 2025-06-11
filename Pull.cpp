@@ -1,10 +1,16 @@
 #include "Pull.h"
 
-Pull::Pull() : back(""), bicep("") {}
-Pull::Pull(std::string b, std::string bi) : back(b), bicep(bi) {}
+// Constructor initializes pull-day exercises
+Pull::Pull() {
+    back = {"Lat Pulldown", "Deadlift"};
+    bicep = {"Barbell Curl", "Hammer Curl"};
+}
 
-std::string Pull::getBack() const { return back; }
-void Pull::setBack(const std::string& b) { back = b; }
-
-std::string Pull::getBicep() const { return bicep; }
-void Pull::setBicep(const std::string& bi) { bicep = bi; }
+// Returns string with pull workout
+string Pull::getInfo() {
+    string result = "-- Pull Workout --\nBack Exercises:\n";
+    for (int i = 0; i < back.size(); i++) result += "- " + back[i] + "\n";
+    result += "Bicep Exercises:\n";
+    for (int i = 0; i < bicep.size(); i++) result += "- " + bicep[i] + "\n";
+    return result;
+}
