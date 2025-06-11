@@ -1,14 +1,26 @@
-#include "Exercises.h"
+#include "Exercise.h"
 
-Exercises::Exercises() : repetitions(0), sets(0), weight(0) {}
+// Constructor
+Exercise::Exercise() : repetitions(0), sets(0), weight(0) {}
 
-Exercises::Exercises(int r, int s, int w) : repetitions(r), sets(s), weight(w) {}
+// Constructor with parameters
+Exercise::Exercise(int reps, int sets, int wt) : repetitions(reps), sets(sets), weight(wt) {}
 
-int Exercises::getRepetitions() const { return repetitions; }
-void Exercises::setRepetitions(int r) { repetitions = r; }
+// Getters
+int Exercise::getRepetitions() { return repetitions; }
+int Exercise::getSets() { return sets; }
+int Exercise::getWeight() { return weight; }
 
-int Exercises::getSets() const { return sets; }
-void Exercises::setSets(int s) { sets = s; }
+// Setters
+void Exercise::setRepetitions(int reps) { repetitions = reps; }
+void Exercise::setSets(int s) { sets = s; }
+void Exercise::setWeight(int wt) { weight = wt; }
 
-int Exercises::getWeight() const { return weight; }
-void Exercises::setWeight(int w) { weight = w; }
+// Overloaded method that returns info
+string Exercise::getInfo(bool detailed) {
+    if (detailed) {
+        return "Reps: " + to_string(repetitions) + ", Sets: " + to_string(sets) + ", Weight: " + to_string(weight) + "kg\n";
+    } else {
+        return "Basic exercise information.\n";
+    }
+}
