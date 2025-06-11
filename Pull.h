@@ -1,23 +1,19 @@
 #ifndef PULL_H
 #define PULL_H
 
-#include "Exercises.h"
-#include <string>
+#include "Exercise.h"
+#include <vector>
 
-class Pull : public Exercises {
+// Class for Pull workout
+class Pull : public Exercise {
 private:
-    std::string back;
-    std::string bicep;
+    // Back and bicep exercises
+    vector<string> back;
+    vector<string> bicep;
 
 public:
     Pull();
-    Pull(std::string, std::string);
-
-    std::string getBack() const;
-    void setBack(const std::string&);
-
-    std::string getBicep() const;
-    void setBicep(const std::string&);
+    string getInfo() override;
 };
 
 #endif
