@@ -1,17 +1,32 @@
 #include "Workout.h"
 
-Workout::Workout() : type("") {}
+// Constructor
+Workout::Workout() : type(""), exercises() {}
 
-Workout::Workout(std::string t, const std::vector<Exercises*>& e) : type(t), exercises(e) {}
+// Overloaded constructor
+Workout::Workout(string t, vector<Exercise*> e) : type(t), exercises(e) {}
 
-std::string Workout::getType() const { return type; }
-void Workout::setType(const std::string& t) { type = t; }
+// Setters
+void Workout::setType(string t) { type = t; }
+void Workout::setExercises(vector<Exercise*> e) { exercises = e; }
 
-std::vector<Exercises*> Workout::getExercises() const { return exercises; }
-void Workout::setExercises(const std::vector<Exercises*>& e) { exercises = e; }
+// Adds a new exercise to the list (aggregation)
+void Workout::addExercise(Exercise* e) {
+    exercises.push_back(e);
+}
 
+// Combine and return info of all exercises
+string Workout::getWorkoutInfo() {
+    string output;
+    for (int i = 0; i < exercises.size(); i++) {
+        output += exercises[i]->getInfo() + "\n";
+    }
+    return output;
+}
+
+// Destructor
 Workout::~Workout() {
-    for (Exercises* e : exercises) {
-        delete e;
+    for (int i = 0; i < exercises.size(); i++) {
+        delete exercises[i];
     }
 }
