@@ -1,26 +1,26 @@
 #ifndef WORKOUT_H
 #define WORKOUT_H
 
-#include <string>
+#include "Exercise.h"
 #include <vector>
-#include "Exercises.h"
 
+// This class aggregates multiple Exercise pointers
 class Workout {
-private:
-    std::string type;
-    std::vector<Exercises*> exercises;
+protected:
+    string type;                      // Type of workout: Push, Pull, Inferior
+    vector<Exercise*> exercises;      // Aggregation of Exercises (pointers)
 
 public:
     Workout();
-    Workout(std::string, const std::vector<Exercises*>&);
+    Workout(string, vector<Exercise*>);
 
-    std::string getType() const;
-    void setType(const std::string&);
+    void setType(string);
+    void setExercises(vector<Exercise*>);
+    void addExercise(Exercise*);
 
-    std::vector<Exercises*> getExercises() const;
-    void setExercises(const std::vector<Exercises*>&);
+    string getWorkoutInfo();
 
-    ~Workout();
+    ~Workout(); 
 };
 
 #endif
