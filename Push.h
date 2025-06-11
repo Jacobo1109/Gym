@@ -1,23 +1,22 @@
 #ifndef PUSH_H
 #define PUSH_H
 
-#include "Exercises.h"
-#include <string>
+#include "Exercise.h"
+#include <vector>
 
-class Push : public Exercises {
+// Concrete class for Push workout
+class Push : public Exercise {
 private:
-    std::string chest;
-    std::string tricep;
+    // Two muscle groups with 2 exercises each
+    vector<string> chest;
+    vector<string> tricep;
 
 public:
+    // Constructor initializes exercises
     Push();
-    Push(std::string, std::string);
 
-    std::string getChest() const;
-    void setChest(const std::string&);
-
-    std::string getTricep() const;
-    void setTricep(const std::string&);
+    // Overrides getInfo from base class
+    string getInfo() override;
 };
 
 #endif
