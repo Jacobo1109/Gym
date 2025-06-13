@@ -2,8 +2,8 @@
 
 // Constructor initializes leg-focused exercises
 Inferior::Inferior() {
-    legs = {"Squats", "Lunges"};
-    calves = {"Standing Calf Raise", "Seated Calf Raise"};
+    legs = {"Squats sets() reps()", "Lunges sets() reps()"};
+    calves = {"Standing Calf Raise sets() reps()", "Seated Calf Raise sets() reps()"};
 }
 
 // Return string with workout
