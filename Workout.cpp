@@ -15,6 +15,12 @@ void Workout::addExercise(Exercise* e) {
     exercises.push_back(e);
 }
 
+// Operator overloading: adds an exercise using +
+Workout& Workout::operator+(Exercise* e) {
+    addExercise(e);
+    return *this;
+}
+
 // Combine and return info of all exercises
 string Workout::getWorkoutInfo() {
     string output;
