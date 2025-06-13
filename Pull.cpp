@@ -2,8 +2,8 @@
 
 // Constructor initializes pull-day exercises
 Pull::Pull() {
-    back = {"Lat Pulldown", "Deadlift"};
-    bicep = {"Barbell Curl", "Hammer Curl"};
+    back = {"Lat Pulldown sets() reps()", "Deadlift sets() reps()"};
+    bicep = {"Barbell Curl sets() reps()", "Hammer Curl sets() reps()"};
 }
 
 // Returns string with pull workout
