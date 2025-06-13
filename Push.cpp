@@ -2,8 +2,8 @@
 
 // Initialize specific exercises for Push day
 Push::Push() {
-    chest = {"Bench Press", "Chest Fly"};
-    tricep = {"Tricep Dips", "Overhead Extension"};
+    chest = {"Bench Press sets() reps()", "Chest Fly sets() reps()"};
+    tricep = {"Tricep Dips sets() reps()", "Overhead Extension sets() reps()"};
 }
 
 // Override base class method to return custom info
