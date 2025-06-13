@@ -18,6 +18,9 @@ public:
     void setExercises(vector<Exercise*>);
     void addExercise(Exercise*);
 
+    // Operator overloading to add an Exercise pointer
+    Workout& operator+(Exercise*);
+
     string getWorkoutInfo();
 
     ~Workout(); 
