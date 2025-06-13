@@ -19,5 +19,6 @@ It inherits from Exercise and models a pull-type workout, targeting back and bic
 # Main
 The main is the part were everything will come together and the classes wwill be getting used.
 
-![image](https://github.com/user-attachments/assets/77f29cbd-3ff1-462f-8abe-26fcce1ae25b)
+![image](https://github.com/user-attachments/assets/0592088e-bf02-4cc1-b572-2e224c8fa3ea)
+
 
